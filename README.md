@@ -12,11 +12,11 @@ A sample .spec file for converting a .py file (with icon) to .exe
 ```
 # -*- mode: python ; coding: utf-8 -*-
 
-a = Analysis(['E:\\Python\\programmes\\Faster2PDF\\imgpdf.py'],
-                 pathex=['E:\\Python\\programmes\\Faster2PDF'],
+a = Analysis(['\\path\\to\\python\\file'],
+                 pathex=['\\path\\to\\folder in which py file is located'],
                  hiddenimports=[],
                  hookspath=None)
-a.datas += [ ('download.ico', 'E:\\Python\\programmes\\Faster2PDF\\download.ico', 'DATA')]
+a.datas += [ ('NameOfIcoFile.ico', '\\path\\to\\ico\\file', 'DATA')]
 
 pyz = PYZ(a.pure)
 exe = EXE(pyz,
@@ -24,9 +24,9 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name=os.path.join('dist', 'Faster2PDF'),
+          name=os.path.join('dist', 'NameOfApplicationFile'),
           debug=False,
           strip=None,
           upx=True,
-          console=False , icon='E:\\Python\\programmes\\Faster2PDF\\download.ico')
+          console=False , icon='\\path\\to\\ico\\file')
 ```          
